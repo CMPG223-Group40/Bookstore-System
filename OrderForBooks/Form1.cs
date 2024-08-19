@@ -205,6 +205,7 @@ namespace OrderForBooks
 
             // Display the summary in the lstSummary
             lstSummary.Items.Clear();
+            lstSummary.Items.Add("THANK YOU FOR YOUR ORDER \n\n");
             lstSummary.Items.Add(summary);
 
             //clear the form for the next order
