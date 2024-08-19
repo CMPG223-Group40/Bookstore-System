@@ -40,6 +40,8 @@ namespace OrderForBooks
             this.txtFilterValue = new System.Windows.Forms.TextBox();
             this.cmbFilterBy = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblQuantity = new System.Windows.Forms.Label();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
             this.gbxShippingAddress = new System.Windows.Forms.GroupBox();
             this.lstAddress = new System.Windows.Forms.ListBox();
             this.lstSummary = new System.Windows.Forms.ListBox();
@@ -47,8 +49,6 @@ namespace OrderForBooks
             this.btnPlaceOrder = new System.Windows.Forms.Button();
             this.btnFilter = new System.Windows.Forms.Button();
             this.dtgvBooksAvailable = new System.Windows.Forms.DataGridView();
-            this.lblQuantity = new System.Windows.Forms.Label();
-            this.lblTotalPrice = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.gbxShippingAddress.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBooksAvailable)).BeginInit();
@@ -121,6 +121,7 @@ namespace OrderForBooks
             this.txtCustomerID.Name = "txtCustomerID";
             this.txtCustomerID.Size = new System.Drawing.Size(242, 20);
             this.txtCustomerID.TabIndex = 7;
+            this.txtCustomerID.TextChanged += new System.EventHandler(this.txtCustomerID_TextChanged);
             // 
             // txtFilterValue
             // 
@@ -132,6 +133,10 @@ namespace OrderForBooks
             // cmbFilterBy
             // 
             this.cmbFilterBy.FormattingEnabled = true;
+            this.cmbFilterBy.Items.AddRange(new object[] {
+            "Author",
+            "Year Published",
+            "Title"});
             this.cmbFilterBy.Location = new System.Drawing.Point(572, 6);
             this.cmbFilterBy.Name = "cmbFilterBy";
             this.cmbFilterBy.Size = new System.Drawing.Size(121, 21);
@@ -149,6 +154,24 @@ namespace OrderForBooks
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // lblQuantity
+            // 
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Location = new System.Drawing.Point(9, 26);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(52, 13);
+            this.lblQuantity.TabIndex = 12;
+            this.lblQuantity.Text = "Quantity :";
+            // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Location = new System.Drawing.Point(9, 63);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(64, 13);
+            this.lblTotalPrice.TabIndex = 13;
+            this.lblTotalPrice.Text = "Total Price :";
             // 
             // gbxShippingAddress
             // 
@@ -215,24 +238,6 @@ namespace OrderForBooks
             this.dtgvBooksAvailable.Size = new System.Drawing.Size(498, 300);
             this.dtgvBooksAvailable.TabIndex = 11;
             this.dtgvBooksAvailable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvBooksAvailable_CellContentClick);
-            // 
-            // lblQuantity
-            // 
-            this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Location = new System.Drawing.Point(9, 26);
-            this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(52, 13);
-            this.lblQuantity.TabIndex = 12;
-            this.lblQuantity.Text = "Quantity :";
-            // 
-            // lblTotalPrice
-            // 
-            this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(9, 63);
-            this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(64, 13);
-            this.lblTotalPrice.TabIndex = 13;
-            this.lblTotalPrice.Text = "Total Price :";
             // 
             // frmPlaceOrderForm
             // 

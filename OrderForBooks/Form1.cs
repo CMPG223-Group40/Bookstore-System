@@ -250,6 +250,11 @@ namespace OrderForBooks
             lstSummary.Items.Clear();
             btnPlaceOrder.Enabled = false;
         }
+
+        private void txtCustomerID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
