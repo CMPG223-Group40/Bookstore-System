@@ -17,7 +17,7 @@ namespace OrderForBooks
         {
             InitializeComponent();
         }
-        SqlConnection conString = "";
+        SqlConnection conString = new SqlConnection("");
         private void Form1_Load(object sender, EventArgs e)
         {
             btnPlaceOrder.Enabled = false; // Disable Place Order button initially
@@ -186,7 +186,7 @@ namespace OrderForBooks
             }
 
             //order summary
-            string summary = $"Reference ID: {referenceId}\n" +
+            string summary = $"Order Number: {referenceId}\n" +
                              $"Customer ID: {customerId}\n" +
                              $"Order Date: {orderDate}\n" +
                              $"Books Ordered:\n";
@@ -255,6 +255,13 @@ namespace OrderForBooks
         private void txtCustomerID_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide(); // Hide the current form
+            Defaultfrm prevForm = new Defaultfrm(); // Replace with your previous form
+            prevForm.Show(); // Show the previous for
         }
     }
 

@@ -49,6 +49,7 @@ namespace OrderForBooks
             this.btnPlaceOrder = new System.Windows.Forms.Button();
             this.btnFilter = new System.Windows.Forms.Button();
             this.dtgvBooksAvailable = new System.Windows.Forms.DataGridView();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.gbxShippingAddress.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBooksAvailable)).BeginInit();
@@ -57,7 +58,7 @@ namespace OrderForBooks
             // lblCustomerID
             // 
             this.lblCustomerID.AutoSize = true;
-            this.lblCustomerID.Location = new System.Drawing.Point(9, 9);
+            this.lblCustomerID.Location = new System.Drawing.Point(9, 31);
             this.lblCustomerID.Name = "lblCustomerID";
             this.lblCustomerID.Size = new System.Drawing.Size(71, 13);
             this.lblCustomerID.TabIndex = 0;
@@ -117,7 +118,7 @@ namespace OrderForBooks
             // 
             // txtCustomerID
             // 
-            this.txtCustomerID.Location = new System.Drawing.Point(114, 2);
+            this.txtCustomerID.Location = new System.Drawing.Point(109, 24);
             this.txtCustomerID.Name = "txtCustomerID";
             this.txtCustomerID.Size = new System.Drawing.Size(242, 20);
             this.txtCustomerID.TabIndex = 7;
@@ -202,7 +203,7 @@ namespace OrderForBooks
             // 
             // btnVerify
             // 
-            this.btnVerify.Location = new System.Drawing.Point(12, 33);
+            this.btnVerify.Location = new System.Drawing.Point(26, 50);
             this.btnVerify.Name = "btnVerify";
             this.btnVerify.Size = new System.Drawing.Size(75, 23);
             this.btnVerify.TabIndex = 2;
@@ -239,11 +240,23 @@ namespace OrderForBooks
             this.dtgvBooksAvailable.TabIndex = 11;
             this.dtgvBooksAvailable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvBooksAvailable_CellContentClick);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(25, 8);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(32, 13);
+            this.linkLabel1.TabIndex = 12;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Back";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // frmPlaceOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(853, 500);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.dtgvBooksAvailable);
             this.Controls.Add(this.btnVerify);
             this.Controls.Add(this.gbxShippingAddress);
@@ -293,6 +306,7 @@ namespace OrderForBooks
         private System.Windows.Forms.Button btnPlaceOrder;
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.DataGridView dtgvBooksAvailable;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 

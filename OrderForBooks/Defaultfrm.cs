@@ -20,9 +20,9 @@ namespace OrderForBooks
         public void SetInitialTab()
         {
             // Ensure the TabControl is not null and has at least one tab
-            if (tabControl1 != null && tabControl1.TabPages.Count > 0)
+            if (tab!= null && tab.TabPages.Count > 0)
             {
-                tabControl1.SelectedTab = tabControl1.TabPages[0];
+                tab.SelectedTab = tab.TabPages[0];
             }
         }
 

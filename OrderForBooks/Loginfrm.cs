@@ -17,7 +17,7 @@ namespace OrderForBooks
         {
             InitializeComponent();
         }
-        SqlConnection conString = "";
+        SqlConnection conString =new SqlConnection("");
         private void btnLogin_Click(object sender, EventArgs e)
         {
             // Get the entered username and password

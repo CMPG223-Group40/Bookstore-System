@@ -19,21 +19,42 @@ namespace OrderForBooks
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                MaintainCustomersFrm newCustomerfrm = new maintainCustomersFrm();
+                adminform.Show();
+            }
+            catch (Exception ex)
+            { }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            try
+            {
+            }
+            catch (Exception ex)
+            { }
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            try
+            {
+                MaintainAuthorssFrm Authorsfrm = new maintainCustomersFrm();
+                adminform.Show();
+            }
+            catch (Exception ex)
+            { }
 
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            try { }
+            catch (Exception ex)
+            { }
 
         }
 

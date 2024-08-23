@@ -101,7 +101,7 @@ namespace OrderForBooks
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(125, 23);
             this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "Exit";
+            this.btnExit.Text = "exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
