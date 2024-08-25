@@ -51,7 +51,7 @@ namespace MaintainAuthors
             this.txtAuthorID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtContactU = new System.Windows.Forms.TextBox();
-            this.txtLastNameU = new System.Windows.Forms.TextBox();
+            this.txtLNameU = new System.Windows.Forms.TextBox();
             this.txtFNameU = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -119,6 +119,7 @@ namespace MaintainAuthors
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnAddAuthor
             // 
@@ -256,7 +257,7 @@ namespace MaintainAuthors
             this.groupBox2.Controls.Add(this.txtAuthorID);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtContactU);
-            this.groupBox2.Controls.Add(this.txtLastNameU);
+            this.groupBox2.Controls.Add(this.txtLNameU);
             this.groupBox2.Controls.Add(this.txtFNameU);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
@@ -291,12 +292,12 @@ namespace MaintainAuthors
             this.txtContactU.Size = new System.Drawing.Size(174, 20);
             this.txtContactU.TabIndex = 5;
             // 
-            // txtLastNameU
+            // txtLNameU
             // 
-            this.txtLastNameU.Location = new System.Drawing.Point(143, 117);
-            this.txtLastNameU.Name = "txtLastNameU";
-            this.txtLastNameU.Size = new System.Drawing.Size(174, 20);
-            this.txtLastNameU.TabIndex = 4;
+            this.txtLNameU.Location = new System.Drawing.Point(143, 117);
+            this.txtLNameU.Name = "txtLNameU";
+            this.txtLNameU.Size = new System.Drawing.Size(174, 20);
+            this.txtLNameU.TabIndex = 4;
             // 
             // txtFNameU
             // 
@@ -350,6 +351,7 @@ namespace MaintainAuthors
             this.btnClearU.TabIndex = 14;
             this.btnClearU.Text = "Clear";
             this.btnClearU.UseVisualStyleBackColor = true;
+            this.btnClearU.Click += new System.EventHandler(this.btnClearU_Click);
             // 
             // tabPage3
             // 
@@ -457,7 +459,7 @@ namespace MaintainAuthors
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtContactU;
-        private System.Windows.Forms.TextBox txtLastNameU;
+        private System.Windows.Forms.TextBox txtLNameU;
         private System.Windows.Forms.TextBox txtFNameU;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;

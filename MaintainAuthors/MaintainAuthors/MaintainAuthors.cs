@@ -42,5 +42,21 @@ namespace MaintainAuthors
         {
             closeForm();
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtFName.Clear();
+            txtLName.Clear();
+            txtContact.Clear();
+            txtFName.Focus();
+        }
+
+        private void btnClearU_Click(object sender, EventArgs e)
+        {
+            txtAuthorID.Clear();
+            txtFNameU.Clear();
+            txtLNameU.Clear();
+            txtContactU.Clear();
+        }
     }
 }
