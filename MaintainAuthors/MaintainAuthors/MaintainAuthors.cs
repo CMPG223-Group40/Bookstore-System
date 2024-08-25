@@ -68,5 +68,58 @@ namespace MaintainAuthors
         {
             txtFName.Focus();
         }
+
+        /**This method adds an author to the system database**/
+        public static void addAuthor()
+        {
+                        
+        }
+
+        /**This method checks if there are digits in user input**/
+        public static bool checkDigits(string text)
+        {
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (Char.IsDigit(text, i))
+                    return true;
+            }
+            return false;
+        }
+
+        private void btnAddAuthor_Click(object sender, EventArgs e)
+        {
+            string fName, lName, contact;
+
+            fName = txtFName.Text;
+            lName = txtLName.Text;
+            contact = txtContact.Text;
+
+            //check if either first or last names have digits and contact number has letters
+            if (!checkDigits(fName))
+            {
+                if (!checkDigits(lName))
+                {
+                    if(checkDigits(contact))
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error: Invalid contact number", "Input error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error: Invalid last name", "Input error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error: Invalid first name", "Input error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

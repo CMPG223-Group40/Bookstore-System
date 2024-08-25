@@ -129,6 +129,7 @@ namespace MaintainAuthors
             this.btnAddAuthor.TabIndex = 8;
             this.btnAddAuthor.Text = "Add Author";
             this.btnAddAuthor.UseVisualStyleBackColor = true;
+            this.btnAddAuthor.Click += new System.EventHandler(this.btnAddAuthor_Click);
             // 
             // dgAddAuthor
             // 
