@@ -84,7 +84,7 @@ namespace MaintainAuthors
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(666, 523);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl1.TabIndex = 20;
             // 
             // tabPage1
             // 
@@ -172,7 +172,7 @@ namespace MaintainAuthors
             this.txtFName.Location = new System.Drawing.Point(143, 36);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(174, 20);
-            this.txtFName.TabIndex = 3;
+            this.txtFName.TabIndex = 0;
             // 
             // label3
             // 
@@ -198,7 +198,7 @@ namespace MaintainAuthors
             this.label1.Location = new System.Drawing.Point(27, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 41;
             this.label1.Text = "First Name:";
             // 
             // tabPage2
@@ -419,6 +419,7 @@ namespace MaintainAuthors
             this.Controls.Add(this.tabControl1);
             this.Name = "MaintainAuthorsFrm";
             this.Text = "Maintain Authors Form";
+            this.Load += new System.EventHandler(this.MaintainAuthorsFrm_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgAddAuthor)).EndInit();
