@@ -43,6 +43,9 @@ namespace MaintainAuthors
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgUpdateAuthor = new System.Windows.Forms.DataGridView();
+            this.cbUpdateAuthor = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtAuthorID = new System.Windows.Forms.TextBox();
@@ -56,22 +59,19 @@ namespace MaintainAuthors
             this.btnExitU = new System.Windows.Forms.Button();
             this.btnClearU = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btnExitD = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cbUpdateAuthor = new System.Windows.Forms.ComboBox();
-            this.dgUpdateAuthor = new System.Windows.Forms.DataGridView();
             this.dgDeleteAuthor = new System.Windows.Forms.DataGridView();
             this.cbDeleteAuthor = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnExitD = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAddAuthor)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgUpdateAuthor)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgUpdateAuthor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDeleteAuthor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -217,6 +217,31 @@ namespace MaintainAuthors
             this.tabPage2.Text = "Update Author";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // dgUpdateAuthor
+            // 
+            this.dgUpdateAuthor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgUpdateAuthor.Location = new System.Drawing.Point(27, 59);
+            this.dgUpdateAuthor.Name = "dgUpdateAuthor";
+            this.dgUpdateAuthor.Size = new System.Drawing.Size(598, 150);
+            this.dgUpdateAuthor.TabIndex = 21;
+            // 
+            // cbUpdateAuthor
+            // 
+            this.cbUpdateAuthor.FormattingEnabled = true;
+            this.cbUpdateAuthor.Location = new System.Drawing.Point(212, 22);
+            this.cbUpdateAuthor.Name = "cbUpdateAuthor";
+            this.cbUpdateAuthor.Size = new System.Drawing.Size(121, 21);
+            this.cbUpdateAuthor.TabIndex = 20;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(24, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(124, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Select Author to Update:";
+            // 
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(212, 441);
@@ -315,6 +340,7 @@ namespace MaintainAuthors
             this.btnExitU.TabIndex = 15;
             this.btnExitU.Text = "Exit";
             this.btnExitU.UseVisualStyleBackColor = true;
+            this.btnExitU.Click += new System.EventHandler(this.btnExitU_Click);
             // 
             // btnClearU
             // 
@@ -338,49 +364,6 @@ namespace MaintainAuthors
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Delete Author";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // btnExitD
-            // 
-            this.btnExitD.Location = new System.Drawing.Point(539, 440);
-            this.btnExitD.Name = "btnExitD";
-            this.btnExitD.Size = new System.Drawing.Size(96, 41);
-            this.btnExitD.TabIndex = 15;
-            this.btnExitD.Text = "Exit";
-            this.btnExitD.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(398, 440);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(96, 41);
-            this.btnDelete.TabIndex = 13;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(24, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(124, 13);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Select Author to Update:";
-            // 
-            // cbUpdateAuthor
-            // 
-            this.cbUpdateAuthor.FormattingEnabled = true;
-            this.cbUpdateAuthor.Location = new System.Drawing.Point(212, 22);
-            this.cbUpdateAuthor.Name = "cbUpdateAuthor";
-            this.cbUpdateAuthor.Size = new System.Drawing.Size(121, 21);
-            this.cbUpdateAuthor.TabIndex = 20;
-            // 
-            // dgUpdateAuthor
-            // 
-            this.dgUpdateAuthor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUpdateAuthor.Location = new System.Drawing.Point(27, 59);
-            this.dgUpdateAuthor.Name = "dgUpdateAuthor";
-            this.dgUpdateAuthor.Size = new System.Drawing.Size(598, 150);
-            this.dgUpdateAuthor.TabIndex = 21;
             // 
             // dgDeleteAuthor
             // 
@@ -407,6 +390,25 @@ namespace MaintainAuthors
             this.label8.TabIndex = 22;
             this.label8.Text = "Select Author to Delete:";
             // 
+            // btnExitD
+            // 
+            this.btnExitD.Location = new System.Drawing.Point(539, 440);
+            this.btnExitD.Name = "btnExitD";
+            this.btnExitD.Size = new System.Drawing.Size(96, 41);
+            this.btnExitD.TabIndex = 15;
+            this.btnExitD.Text = "Exit";
+            this.btnExitD.UseVisualStyleBackColor = true;
+            this.btnExitD.Click += new System.EventHandler(this.btnExitD_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(398, 440);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(96, 41);
+            this.btnDelete.TabIndex = 13;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
             // MaintainAuthorsFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -422,11 +424,11 @@ namespace MaintainAuthors
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgUpdateAuthor)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgUpdateAuthor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDeleteAuthor)).EndInit();
             this.ResumeLayout(false);
 

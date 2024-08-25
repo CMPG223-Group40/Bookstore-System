@@ -22,9 +22,25 @@ namespace MaintainAuthors
 
         }
 
+        /**This method closes forms after the exit button is clicked**/
+        public static void closeForm()
+        {
+            Application.Exit();
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
+            closeForm();
+        }
 
+        private void btnExitU_Click(object sender, EventArgs e)
+        {
+            closeForm();
+        }
+
+        private void btnExitD_Click(object sender, EventArgs e)
+        {
+            closeForm();
         }
     }
 }
