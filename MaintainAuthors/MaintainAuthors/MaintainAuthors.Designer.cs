@@ -31,7 +31,7 @@ namespace MaintainAuthors
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnAddAuthor = new System.Windows.Forms.Button();
             this.dgAddAuthor = new System.Windows.Forms.DataGridView();
@@ -43,36 +43,36 @@ namespace MaintainAuthors
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtAuthorID = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtContactU = new System.Windows.Forms.TextBox();
+            this.txtLastNameU = new System.Windows.Forms.TextBox();
+            this.txtFNameU = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnExitU = new System.Windows.Forms.Button();
+            this.btnClearU = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnExitD = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbUpdateAuthor = new System.Windows.Forms.ComboBox();
+            this.dgUpdateAuthor = new System.Windows.Forms.DataGridView();
+            this.dgDeleteAuthor = new System.Windows.Forms.DataGridView();
+            this.cbDeleteAuthor = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAddAuthor)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgUpdateAuthor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDeleteAuthor)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -88,7 +88,7 @@ namespace MaintainAuthors
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.btnClose);
+            this.tabPage1.Controls.Add(this.btnExit);
             this.tabPage1.Controls.Add(this.btnClear);
             this.tabPage1.Controls.Add(this.btnAddAuthor);
             this.tabPage1.Controls.Add(this.dgAddAuthor);
@@ -101,15 +101,15 @@ namespace MaintainAuthors
             this.tabPage1.Text = "Add New Author";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnClose
+            // btnExit
             // 
-            this.btnClose.Location = new System.Drawing.Point(544, 438);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(96, 41);
-            this.btnClose.TabIndex = 10;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnExit.Location = new System.Drawing.Point(544, 438);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(96, 41);
+            this.btnExit.TabIndex = 10;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnClear
             // 
@@ -202,11 +202,13 @@ namespace MaintainAuthors
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.groupBox4);
+            this.tabPage2.Controls.Add(this.dgUpdateAuthor);
+            this.tabPage2.Controls.Add(this.cbUpdateAuthor);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.btnUpdate);
             this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.btnExitU);
+            this.tabPage2.Controls.Add(this.btnClearU);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -215,77 +217,22 @@ namespace MaintainAuthors
             this.tabPage2.Text = "Update Author";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // btnUpdate
             // 
-            this.tabPage3.Controls.Add(this.groupBox3);
-            this.tabPage3.Controls.Add(this.button4);
-            this.tabPage3.Controls.Add(this.button6);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(658, 497);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Delete Author";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(529, 441);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 41);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(377, 441);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 41);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Clear";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(601, 182);
-            this.dataGridView1.TabIndex = 12;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(540, 395);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(96, 41);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "Close";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(399, 395);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(96, 41);
-            this.button6.TabIndex = 13;
-            this.button6.Text = "Delete";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 29);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(597, 302);
-            this.dataGridView2.TabIndex = 12;
+            this.btnUpdate.Location = new System.Drawing.Point(212, 441);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(96, 41);
+            this.btnUpdate.TabIndex = 18;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.txtAuthorID);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.txtContactU);
+            this.groupBox2.Controls.Add(this.txtLastNameU);
+            this.groupBox2.Controls.Add(this.txtFNameU);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
@@ -296,26 +243,42 @@ namespace MaintainAuthors
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Update Author Details";
             // 
-            // textBox4
+            // txtAuthorID
             // 
-            this.textBox4.Location = new System.Drawing.Point(143, 159);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(174, 20);
-            this.textBox4.TabIndex = 5;
+            this.txtAuthorID.Location = new System.Drawing.Point(143, 36);
+            this.txtAuthorID.Name = "txtAuthorID";
+            this.txtAuthorID.Size = new System.Drawing.Size(174, 20);
+            this.txtAuthorID.TabIndex = 7;
             // 
-            // textBox5
+            // label10
             // 
-            this.textBox5.Location = new System.Drawing.Point(143, 117);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(174, 20);
-            this.textBox5.TabIndex = 4;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(27, 36);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(55, 13);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "Author ID:";
             // 
-            // textBox6
+            // txtContactU
             // 
-            this.textBox6.Location = new System.Drawing.Point(143, 77);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(174, 20);
-            this.textBox6.TabIndex = 3;
+            this.txtContactU.Location = new System.Drawing.Point(143, 159);
+            this.txtContactU.Name = "txtContactU";
+            this.txtContactU.Size = new System.Drawing.Size(174, 20);
+            this.txtContactU.TabIndex = 5;
+            // 
+            // txtLastNameU
+            // 
+            this.txtLastNameU.Location = new System.Drawing.Point(143, 117);
+            this.txtLastNameU.Name = "txtLastNameU";
+            this.txtLastNameU.Size = new System.Drawing.Size(174, 20);
+            this.txtLastNameU.TabIndex = 4;
+            // 
+            // txtFNameU
+            // 
+            this.txtFNameU.Location = new System.Drawing.Point(143, 77);
+            this.txtFNameU.Name = "txtFNameU";
+            this.txtFNameU.Size = new System.Drawing.Size(174, 20);
+            this.txtFNameU.TabIndex = 3;
             // 
             // label4
             // 
@@ -344,57 +307,111 @@ namespace MaintainAuthors
             this.label6.TabIndex = 0;
             this.label6.Text = "First Name:";
             // 
-            // groupBox4
+            // btnExitU
             // 
-            this.groupBox4.Controls.Add(this.dataGridView1);
-            this.groupBox4.Location = new System.Drawing.Point(17, 13);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(623, 207);
-            this.groupBox4.TabIndex = 17;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Select Author To Update";
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
+            this.btnExitU.Location = new System.Drawing.Point(529, 441);
+            this.btnExitU.Name = "btnExitU";
+            this.btnExitU.Size = new System.Drawing.Size(96, 41);
+            this.btnExitU.TabIndex = 15;
+            this.btnExitU.Text = "Exit";
+            this.btnExitU.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // btnClearU
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(27, 36);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 13);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "Author ID:";
+            this.btnClearU.Location = new System.Drawing.Point(377, 441);
+            this.btnClearU.Name = "btnClearU";
+            this.btnClearU.Size = new System.Drawing.Size(96, 41);
+            this.btnClearU.TabIndex = 14;
+            this.btnClearU.Text = "Clear";
+            this.btnClearU.UseVisualStyleBackColor = true;
             // 
-            // textBox7
+            // tabPage3
             // 
-            this.textBox7.Location = new System.Drawing.Point(143, 36);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(174, 20);
-            this.textBox7.TabIndex = 7;
+            this.tabPage3.Controls.Add(this.dgDeleteAuthor);
+            this.tabPage3.Controls.Add(this.cbDeleteAuthor);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.btnExitD);
+            this.tabPage3.Controls.Add(this.btnDelete);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(658, 497);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Delete Author";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnExitD
             // 
-            this.button3.Location = new System.Drawing.Point(212, 441);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(96, 41);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "Update";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnExitD.Location = new System.Drawing.Point(539, 440);
+            this.btnExitD.Name = "btnExitD";
+            this.btnExitD.Size = new System.Drawing.Size(96, 41);
+            this.btnExitD.TabIndex = 15;
+            this.btnExitD.Text = "Exit";
+            this.btnExitD.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // btnDelete
             // 
-            this.groupBox3.Controls.Add(this.dataGridView2);
-            this.groupBox3.Location = new System.Drawing.Point(19, 10);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(620, 350);
-            this.groupBox3.TabIndex = 16;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Select Author To Delete:";
+            this.btnDelete.Location = new System.Drawing.Point(398, 440);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(96, 41);
+            this.btnDelete.TabIndex = 13;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(24, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(124, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Select Author to Update:";
+            // 
+            // cbUpdateAuthor
+            // 
+            this.cbUpdateAuthor.FormattingEnabled = true;
+            this.cbUpdateAuthor.Location = new System.Drawing.Point(212, 22);
+            this.cbUpdateAuthor.Name = "cbUpdateAuthor";
+            this.cbUpdateAuthor.Size = new System.Drawing.Size(121, 21);
+            this.cbUpdateAuthor.TabIndex = 20;
+            // 
+            // dgUpdateAuthor
+            // 
+            this.dgUpdateAuthor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgUpdateAuthor.Location = new System.Drawing.Point(27, 59);
+            this.dgUpdateAuthor.Name = "dgUpdateAuthor";
+            this.dgUpdateAuthor.Size = new System.Drawing.Size(598, 150);
+            this.dgUpdateAuthor.TabIndex = 21;
+            // 
+            // dgDeleteAuthor
+            // 
+            this.dgDeleteAuthor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgDeleteAuthor.Location = new System.Drawing.Point(38, 57);
+            this.dgDeleteAuthor.Name = "dgDeleteAuthor";
+            this.dgDeleteAuthor.Size = new System.Drawing.Size(597, 359);
+            this.dgDeleteAuthor.TabIndex = 24;
+            // 
+            // cbDeleteAuthor
+            // 
+            this.cbDeleteAuthor.FormattingEnabled = true;
+            this.cbDeleteAuthor.Location = new System.Drawing.Point(223, 20);
+            this.cbDeleteAuthor.Name = "cbDeleteAuthor";
+            this.cbDeleteAuthor.Size = new System.Drawing.Size(121, 21);
+            this.cbDeleteAuthor.TabIndex = 23;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(35, 20);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(120, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Select Author to Delete:";
             // 
             // MaintainAuthorsFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 538);
+            this.ClientSize = new System.Drawing.Size(707, 538);
             this.Controls.Add(this.tabControl1);
             this.Name = "MaintainAuthorsFrm";
             this.Text = "Maintain Authors Form";
@@ -404,13 +421,13 @@ namespace MaintainAuthors
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgUpdateAuthor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDeleteAuthor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -421,7 +438,7 @@ namespace MaintainAuthors
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnAddAuthor;
         private System.Windows.Forms.DataGridView dgAddAuthor;
@@ -432,24 +449,26 @@ namespace MaintainAuthors
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btnExitU;
+        private System.Windows.Forms.Button btnClearU;
+        private System.Windows.Forms.Button btnExitD;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtContactU;
+        private System.Windows.Forms.TextBox txtLastNameU;
+        private System.Windows.Forms.TextBox txtFNameU;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtAuthorID;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.DataGridView dgUpdateAuthor;
+        private System.Windows.Forms.ComboBox cbUpdateAuthor;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dgDeleteAuthor;
+        private System.Windows.Forms.ComboBox cbDeleteAuthor;
+        private System.Windows.Forms.Label label8;
     }
 }
 
