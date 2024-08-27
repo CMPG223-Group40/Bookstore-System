@@ -151,36 +151,44 @@ namespace MaintainAuthors
                 {
                     if(checkDigits(contact))
                     {                        
-                        try
+                        if(contact.Length == 10)
                         {
-                            //connect to database
-                            conn.Open();
+                            try
+                            {
+                                //connect to database
+                                conn.Open();
 
-                            //sql insert command to add new author record
-                            sqlAdd = $"INSERT INTO tblAuthors(FName,LName,ContactNo) " +
-                                $"VALUES('{fName}','{lName}','{contact}')";
+                                //sql insert command to add new author record
+                                sqlAdd = $"INSERT INTO tblAuthors(FName,LName,ContactNo) " +
+                                    $"VALUES('{fName}','{lName}','{contact}')";
 
-                            //call add author method
-                            addAuthor(sqlAdd);
+                                //call add author method
+                                addAuthor(sqlAdd);
 
-                            //display author table on form
-                            adap = new SqlDataAdapter();
-                            ds = new DataSet();
+                                //display author table on form
+                                adap = new SqlDataAdapter();
+                                ds = new DataSet();
 
-                            //sql command to display all in table
-                            string sql = "SELECT * FROM tblAuthors";
-                            comm = new SqlCommand(sql, conn);
-                            adap.SelectCommand = comm;
-                            adap.Fill(ds, "AuthorTable");
+                                //sql command to display all in table
+                                string sql = "SELECT * FROM tblAuthors";
+                                comm = new SqlCommand(sql, conn);
+                                adap.SelectCommand = comm;
+                                adap.Fill(ds, "AuthorTable");
 
-                            dgAddAuthor.DataSource = ds;
-                            dgAddAuthor.DataMember = "AuthorTable";
+                                dgAddAuthor.DataSource = ds;
+                                dgAddAuthor.DataMember = "AuthorTable";
 
-                            conn.Close(); //close database connection
+                                conn.Close(); //close database connection
+                            }
+                            catch (SqlException error)
+                            {
+                                MessageBox.Show(error.Message);
+                            }
                         }
-                        catch (SqlException error)
+                        else
                         {
-                            MessageBox.Show(error.Message);
+                            MessageBox.Show("Error: Invalid contact number. Contact number should contain 10 digits",
+                            "Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
