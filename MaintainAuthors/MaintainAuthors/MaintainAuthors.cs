@@ -104,23 +104,23 @@ namespace MaintainAuthors
         public static SqlDataAdapter adap;
         public static DataSet ds;
 
-        /**This method adds an author to the system database
+        /**This method adds an author to the system database**/
         public static void addAuthor(string sql)
         {
             try
             {
-                //connect to database
-                conn.Open();
+                adap = new SqlDataAdapter();
+                comm = new SqlCommand(sql,conn);
 
-                
-
-                conn.Close(); //close database connection
+                //add new record to database
+                adap.InsertCommand = comm;
+                adap.InsertCommand.ExecuteNonQuery();
             }
             catch (SqlException error)
             {
                 MessageBox.Show(error.Message);
             }
-        }**/
+        }
 
 
 
@@ -138,7 +138,7 @@ namespace MaintainAuthors
 
         private void btnAddAuthor_Click(object sender, EventArgs e)
         {
-            string fName, lName, contact;
+            string fName, lName, contact, sqlAdd;
 
             fName = txtFName.Text;
             lName = txtLName.Text;
@@ -150,13 +150,20 @@ namespace MaintainAuthors
                 if (!checkDigits(lName))
                 {
                     if(checkDigits(contact))
-                    {
-                        //display author table on form
+                    {                        
                         try
                         {
                             //connect to database
                             conn.Open();
 
+                            //sql insert command to add new author record
+                            sqlAdd = $"INSERT INTO tblAuthors(FName,LName,ContactNo) " +
+                                $"VALUES('{fName}','{lName}','{contact}')";
+
+                            //call add author method
+                            addAuthor(sqlAdd);
+
+                            //display author table on form
                             adap = new SqlDataAdapter();
                             ds = new DataSet();
 
