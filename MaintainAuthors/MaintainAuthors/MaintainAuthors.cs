@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace MaintainAuthors
 {
@@ -67,13 +68,62 @@ namespace MaintainAuthors
         private void MaintainAuthorsFrm_Load(object sender, EventArgs e)
         {
             txtFName.Focus();
+
+            //display author table on form
+            try
+            {
+                //connect to database
+                conn.Open();
+
+                adap = new SqlDataAdapter();
+                ds = new DataSet();
+
+                //sql command to display all in table
+                string sql = "SELECT * FROM tblAuthors";
+                comm = new SqlCommand(sql, conn);
+                adap.SelectCommand = comm;
+                adap.Fill(ds, "AuthorTable");
+
+                dgAddAuthor.DataSource = ds;
+                dgAddAuthor.DataMember = "AuthorTable";
+
+                conn.Close(); //close database connection
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.Message);
+            }
         }
 
-        /**This method adds an author to the system database**/
-        public static void addAuthor()
+        //public declaration of database connection string
+        public static string conStr = "Data Source=MALONJE-S-ASUS-;Initial Catalog=BookStore;Integrated Security=True";
+
+        //public declaration of connection, command, data adapter and dataset
+        public static SqlConnection conn = new SqlConnection(conStr);
+        public static SqlCommand comm;
+        public static SqlDataAdapter adap;
+        public static DataSet ds;
+
+        /**This method adds an author to the system database
+        public static void addAuthor(string sql)
         {
-                        
-        }
+            try
+            {
+                //connect to database
+                conn.Open();
+
+                
+
+                conn.Close(); //close database connection
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }**/
+
+
+
 
         /**This method checks if there are digits in user input**/
         public static bool checkDigits(string text)
@@ -101,24 +151,122 @@ namespace MaintainAuthors
                 {
                     if(checkDigits(contact))
                     {
+                        //display author table on form
+                        try
+                        {
+                            //connect to database
+                            conn.Open();
 
+                            adap = new SqlDataAdapter();
+                            ds = new DataSet();
+
+                            //sql command to display all in table
+                            string sql = "SELECT * FROM tblAuthors";
+                            comm = new SqlCommand(sql, conn);
+                            adap.SelectCommand = comm;
+                            adap.Fill(ds, "AuthorTable");
+
+                            dgAddAuthor.DataSource = ds;
+                            dgAddAuthor.DataMember = "AuthorTable";
+
+                            conn.Close(); //close database connection
+                        }
+                        catch (SqlException error)
+                        {
+                            MessageBox.Show(error.Message);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Error: Invalid contact number", "Input error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error: Invalid contact number. Contact number cannot contain letters",
+                            "Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Error: Invalid last name", "Input error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error: Invalid last name. Last name cannot contain numbers", 
+                        "Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Error: Invalid first name", "Input error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: Invalid first name. First name cannot contain numbers", 
+                    "Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void lblUpdate_Click(object sender, EventArgs e)
+        {
+            //display author table on form
+            try
+            {
+                //connect to database
+                conn.Open();
+
+                adap = new SqlDataAdapter();
+                ds = new DataSet();
+
+                //sql command to display all in table
+                string sql = "SELECT * FROM tblAuthors";
+                comm = new SqlCommand(sql, conn);
+                adap.SelectCommand = comm;
+                adap.Fill(ds, "AuthorTable");
+
+                dgUpdateAuthor.DataSource = ds;
+                dgUpdateAuthor.DataMember = "AuthorTable";
+
+                conn.Close(); //close database connection
+
+                lblUpdate.Visible = false;
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
+
+        private void lblDelete_Click(object sender, EventArgs e)
+        {
+            //display author table on form
+            try
+            {
+                //connect to database
+                conn.Open();
+
+                adap = new SqlDataAdapter();
+                ds = new DataSet();
+
+                //sql command to display all in table
+                string sql = "SELECT * FROM tblAuthors";
+                comm = new SqlCommand(sql, conn);
+                adap.SelectCommand = comm;
+                adap.Fill(ds, "AuthorTable");
+
+                dgDeleteAuthor.DataSource = ds;
+                dgDeleteAuthor.DataMember = "AuthorTable";
+
+                conn.Close(); //close database connection
+
+                lblDelete.Visible = false;
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.Message);
             }
         }
     }

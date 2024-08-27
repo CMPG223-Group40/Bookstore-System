@@ -64,6 +64,8 @@ namespace MaintainAuthors
             this.label8 = new System.Windows.Forms.Label();
             this.btnExitD = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.lblUpdate = new System.Windows.Forms.Label();
+            this.lblDelete = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAddAuthor)).BeginInit();
@@ -204,6 +206,7 @@ namespace MaintainAuthors
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.lblUpdate);
             this.tabPage2.Controls.Add(this.dgUpdateAuthor);
             this.tabPage2.Controls.Add(this.cbUpdateAuthor);
             this.tabPage2.Controls.Add(this.label7);
@@ -218,11 +221,12 @@ namespace MaintainAuthors
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Update Author";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // dgUpdateAuthor
             // 
             this.dgUpdateAuthor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUpdateAuthor.Location = new System.Drawing.Point(27, 59);
+            this.dgUpdateAuthor.Location = new System.Drawing.Point(27, 67);
             this.dgUpdateAuthor.Name = "dgUpdateAuthor";
             this.dgUpdateAuthor.Size = new System.Drawing.Size(598, 150);
             this.dgUpdateAuthor.TabIndex = 21;
@@ -230,7 +234,7 @@ namespace MaintainAuthors
             // cbUpdateAuthor
             // 
             this.cbUpdateAuthor.FormattingEnabled = true;
-            this.cbUpdateAuthor.Location = new System.Drawing.Point(212, 22);
+            this.cbUpdateAuthor.Location = new System.Drawing.Point(212, 33);
             this.cbUpdateAuthor.Name = "cbUpdateAuthor";
             this.cbUpdateAuthor.Size = new System.Drawing.Size(121, 21);
             this.cbUpdateAuthor.TabIndex = 20;
@@ -238,7 +242,7 @@ namespace MaintainAuthors
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(24, 22);
+            this.label7.Location = new System.Drawing.Point(24, 33);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(124, 13);
             this.label7.TabIndex = 19;
@@ -252,6 +256,7 @@ namespace MaintainAuthors
             this.btnUpdate.TabIndex = 18;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // groupBox2
             // 
@@ -263,7 +268,7 @@ namespace MaintainAuthors
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(24, 226);
+            this.groupBox2.Location = new System.Drawing.Point(27, 235);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(337, 200);
             this.groupBox2.TabIndex = 16;
@@ -356,6 +361,7 @@ namespace MaintainAuthors
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.lblDelete);
             this.tabPage3.Controls.Add(this.dgDeleteAuthor);
             this.tabPage3.Controls.Add(this.cbDeleteAuthor);
             this.tabPage3.Controls.Add(this.label8);
@@ -367,11 +373,12 @@ namespace MaintainAuthors
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Delete Author";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // dgDeleteAuthor
             // 
             this.dgDeleteAuthor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDeleteAuthor.Location = new System.Drawing.Point(38, 57);
+            this.dgDeleteAuthor.Location = new System.Drawing.Point(38, 75);
             this.dgDeleteAuthor.Name = "dgDeleteAuthor";
             this.dgDeleteAuthor.Size = new System.Drawing.Size(597, 359);
             this.dgDeleteAuthor.TabIndex = 24;
@@ -379,7 +386,7 @@ namespace MaintainAuthors
             // cbDeleteAuthor
             // 
             this.cbDeleteAuthor.FormattingEnabled = true;
-            this.cbDeleteAuthor.Location = new System.Drawing.Point(223, 20);
+            this.cbDeleteAuthor.Location = new System.Drawing.Point(223, 39);
             this.cbDeleteAuthor.Name = "cbDeleteAuthor";
             this.cbDeleteAuthor.Size = new System.Drawing.Size(121, 21);
             this.cbDeleteAuthor.TabIndex = 23;
@@ -387,7 +394,7 @@ namespace MaintainAuthors
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(35, 20);
+            this.label8.Location = new System.Drawing.Point(35, 39);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(120, 13);
             this.label8.TabIndex = 22;
@@ -411,6 +418,28 @@ namespace MaintainAuthors
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // lblUpdate
+            // 
+            this.lblUpdate.AutoSize = true;
+            this.lblUpdate.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblUpdate.Location = new System.Drawing.Point(27, 7);
+            this.lblUpdate.Name = "lblUpdate";
+            this.lblUpdate.Size = new System.Drawing.Size(163, 13);
+            this.lblUpdate.TabIndex = 22;
+            this.lblUpdate.Text = "Click here to load the database...";
+            this.lblUpdate.Click += new System.EventHandler(this.lblUpdate_Click);
+            // 
+            // lblDelete
+            // 
+            this.lblDelete.AutoSize = true;
+            this.lblDelete.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblDelete.Location = new System.Drawing.Point(35, 10);
+            this.lblDelete.Name = "lblDelete";
+            this.lblDelete.Size = new System.Drawing.Size(163, 13);
+            this.lblDelete.TabIndex = 25;
+            this.lblDelete.Text = "Click here to load the database...";
+            this.lblDelete.Click += new System.EventHandler(this.lblDelete_Click);
             // 
             // MaintainAuthorsFrm
             // 
@@ -475,6 +504,8 @@ namespace MaintainAuthors
         private System.Windows.Forms.DataGridView dgDeleteAuthor;
         private System.Windows.Forms.ComboBox cbDeleteAuthor;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblUpdate;
+        private System.Windows.Forms.Label lblDelete;
     }
 }
 
