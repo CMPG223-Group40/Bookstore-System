@@ -90,6 +90,7 @@ namespace MaintainAuthors
             // 
             // tabPage1
             // 
+            this.tabPage1.BackgroundImage = global::MaintainAuthors.Properties.Resources.author;
             this.tabPage1.Controls.Add(this.btnExit);
             this.tabPage1.Controls.Add(this.btnClear);
             this.tabPage1.Controls.Add(this.btnAddAuthor);
@@ -105,32 +106,38 @@ namespace MaintainAuthors
             // 
             // btnExit
             // 
+            this.btnExit.BackColor = System.Drawing.Color.White;
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.Location = new System.Drawing.Point(544, 438);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(96, 41);
             this.btnExit.TabIndex = 10;
             this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnClear
             // 
+            this.btnClear.BackColor = System.Drawing.Color.White;
+            this.btnClear.ForeColor = System.Drawing.Color.Black;
             this.btnClear.Location = new System.Drawing.Point(397, 438);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(96, 41);
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnAddAuthor
             // 
+            this.btnAddAuthor.BackColor = System.Drawing.Color.White;
+            this.btnAddAuthor.ForeColor = System.Drawing.Color.Black;
             this.btnAddAuthor.Location = new System.Drawing.Point(239, 438);
             this.btnAddAuthor.Name = "btnAddAuthor";
             this.btnAddAuthor.Size = new System.Drawing.Size(96, 41);
             this.btnAddAuthor.TabIndex = 8;
             this.btnAddAuthor.Text = "Add Author";
-            this.btnAddAuthor.UseVisualStyleBackColor = true;
+            this.btnAddAuthor.UseVisualStyleBackColor = false;
             this.btnAddAuthor.Click += new System.EventHandler(this.btnAddAuthor_Click);
             // 
             // dgAddAuthor
@@ -143,12 +150,14 @@ namespace MaintainAuthors
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.txtContact);
             this.groupBox1.Controls.Add(this.txtLName);
             this.groupBox1.Controls.Add(this.txtFName);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(30, 20);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(337, 200);
@@ -180,6 +189,7 @@ namespace MaintainAuthors
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(27, 159);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 13);
@@ -189,6 +199,7 @@ namespace MaintainAuthors
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(27, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
@@ -198,6 +209,7 @@ namespace MaintainAuthors
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(27, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
@@ -206,6 +218,7 @@ namespace MaintainAuthors
             // 
             // tabPage2
             // 
+            this.tabPage2.BackgroundImage = global::MaintainAuthors.Properties.Resources.author;
             this.tabPage2.Controls.Add(this.lblUpdate);
             this.tabPage2.Controls.Add(this.dgUpdateAuthor);
             this.tabPage2.Controls.Add(this.cbUpdateAuthor);
@@ -226,6 +239,7 @@ namespace MaintainAuthors
             // lblUpdate
             // 
             this.lblUpdate.AutoSize = true;
+            this.lblUpdate.BackColor = System.Drawing.Color.White;
             this.lblUpdate.ForeColor = System.Drawing.Color.Red;
             this.lblUpdate.Location = new System.Drawing.Point(27, 7);
             this.lblUpdate.Name = "lblUpdate";
@@ -254,6 +268,7 @@ namespace MaintainAuthors
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(24, 33);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(124, 13);
@@ -262,16 +277,18 @@ namespace MaintainAuthors
             // 
             // btnUpdate
             // 
+            this.btnUpdate.BackColor = System.Drawing.Color.White;
             this.btnUpdate.Location = new System.Drawing.Point(212, 441);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(96, 41);
             this.btnUpdate.TabIndex = 18;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.txtAuthorID);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtContactU);
@@ -355,26 +372,29 @@ namespace MaintainAuthors
             // 
             // btnExitU
             // 
+            this.btnExitU.BackColor = System.Drawing.Color.White;
             this.btnExitU.Location = new System.Drawing.Point(529, 441);
             this.btnExitU.Name = "btnExitU";
             this.btnExitU.Size = new System.Drawing.Size(96, 41);
             this.btnExitU.TabIndex = 15;
             this.btnExitU.Text = "Exit";
-            this.btnExitU.UseVisualStyleBackColor = true;
+            this.btnExitU.UseVisualStyleBackColor = false;
             this.btnExitU.Click += new System.EventHandler(this.btnExitU_Click);
             // 
             // btnClearU
             // 
+            this.btnClearU.BackColor = System.Drawing.Color.White;
             this.btnClearU.Location = new System.Drawing.Point(377, 441);
             this.btnClearU.Name = "btnClearU";
             this.btnClearU.Size = new System.Drawing.Size(96, 41);
             this.btnClearU.TabIndex = 14;
             this.btnClearU.Text = "Clear";
-            this.btnClearU.UseVisualStyleBackColor = true;
+            this.btnClearU.UseVisualStyleBackColor = false;
             this.btnClearU.Click += new System.EventHandler(this.btnClearU_Click);
             // 
             // tabPage3
             // 
+            this.tabPage3.BackgroundImage = global::MaintainAuthors.Properties.Resources.author;
             this.tabPage3.Controls.Add(this.lblDelete);
             this.tabPage3.Controls.Add(this.dgDeleteAuthor);
             this.tabPage3.Controls.Add(this.cbDeleteAuthor);
@@ -392,6 +412,7 @@ namespace MaintainAuthors
             // lblDelete
             // 
             this.lblDelete.AutoSize = true;
+            this.lblDelete.BackColor = System.Drawing.Color.White;
             this.lblDelete.ForeColor = System.Drawing.Color.Red;
             this.lblDelete.Location = new System.Drawing.Point(35, 10);
             this.lblDelete.Name = "lblDelete";
@@ -420,6 +441,7 @@ namespace MaintainAuthors
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(35, 39);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(120, 13);
@@ -428,22 +450,24 @@ namespace MaintainAuthors
             // 
             // btnExitD
             // 
+            this.btnExitD.BackColor = System.Drawing.Color.White;
             this.btnExitD.Location = new System.Drawing.Point(539, 440);
             this.btnExitD.Name = "btnExitD";
             this.btnExitD.Size = new System.Drawing.Size(96, 41);
             this.btnExitD.TabIndex = 15;
             this.btnExitD.Text = "Exit";
-            this.btnExitD.UseVisualStyleBackColor = true;
+            this.btnExitD.UseVisualStyleBackColor = false;
             this.btnExitD.Click += new System.EventHandler(this.btnExitD_Click);
             // 
             // btnDelete
             // 
+            this.btnDelete.BackColor = System.Drawing.Color.White;
             this.btnDelete.Location = new System.Drawing.Point(398, 440);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(96, 41);
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // MaintainAuthorsFrm
