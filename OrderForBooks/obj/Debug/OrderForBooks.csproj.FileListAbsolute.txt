@@ -1,0 +1,6 @@
+C:\Users\preci\OneDrive\Desktop\Bookstore-System\OrderForBooks\obj\Debug\OrderForBooks.csproj.AssemblyReference.cache
+C:\Users\preci\OneDrive\Desktop\Bookstore-System\OrderForBooks\obj\Debug\OrderForBooks.frmPlaceOrderForm.resources
+C:\Users\preci\OneDrive\Desktop\Bookstore-System\OrderForBooks\obj\Debug\OrderForBooks.Properties.Resources.resources
+C:\Users\preci\OneDrive\Desktop\Bookstore-System\OrderForBooks\obj\Debug\OrderForBooks.csproj.GenerateResource.cache
+C:\Users\preci\OneDrive\Desktop\Bookstore-System\OrderForBooks\obj\Debug\OrderForBooks.csproj.CoreCompileInputs.cache
+C:\Users\preci\OneDrive\Desktop\Bookstore-System\OrderForBooks\obj\Debug\OrderForBooks.Defaultfrm.resources
