@@ -140,6 +140,24 @@ namespace MaintainAuthors
             }
         }
 
+        /**This method deletes an author from the system database**/
+        public static void deleteAuthor(string sql)
+        {
+            try
+            {
+                adap = new SqlDataAdapter();
+                comm = new SqlCommand(sql, conn);
+
+                //add new record to database
+                adap.DeleteCommand = comm;
+                adap.DeleteCommand.ExecuteNonQuery();
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
+
 
         /**This method checks if there are digits in user input**/
         public static bool checkDigits(string text)
@@ -244,12 +262,26 @@ namespace MaintainAuthors
                 //connect to database
                 conn.Open();
 
-                //sql update command to update new author record
-                sqlUpdate = $"UPDATE tblAuthors SET FName = '{fName}', LName = '{lName}', ContactNo = '{contact}'" +
-                    $"WHERE AuthorID = {authorID}";
+                DialogResult result = MessageBox.Show("Do you wish to continue to update selected author?", "Update Author Prompt",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
-                //call update author method
-                updateAuthor(sqlUpdate);
+                if(result == DialogResult.OK)
+                {
+                    //sql update command to update new author record
+                    sqlUpdate = $"UPDATE tblAuthors SET FName = '{fName}', LName = '{lName}', ContactNo = '{contact}'" +
+                        $"WHERE AuthorID = {authorID}";
+
+                    //call update author method
+                    updateAuthor(sqlUpdate);
+
+                    MessageBox.Show("Author details updated successfully", "Update Author Success",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Author details update cancelled", "Update Author Cancelled",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
                 //display author table on form
                 adap = new SqlDataAdapter();
@@ -266,8 +298,7 @@ namespace MaintainAuthors
 
                 conn.Close(); //close database connection
 
-                MessageBox.Show("Author details updated successfully", "Update Author Success",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
             catch (SqlException error)
             {
@@ -428,6 +459,67 @@ namespace MaintainAuthors
             {
                 MessageBox.Show(error.Message);
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string sqlDelete;
+            int authorID;
+            
+            if (cbDeleteAuthor.SelectedItem != null)
+            {
+                authorID = (int)cbDeleteAuthor.SelectedValue;
+                try
+                {
+                    //connect to database
+                    conn.Open();
+
+                    DialogResult result = MessageBox.Show("Do you wish to continue to delete selected author?", "Delete Author Prompt",
+                        MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                    if (result == DialogResult.OK)
+                    {
+                        //sql update command to update new author record
+                        sqlDelete = $"DELETE FROM tblAuthors WHERE AuthorID = {authorID}";
+
+                        //call update author method
+                        deleteAuthor(sqlDelete);
+
+                        MessageBox.Show("Author details deleted successfully", "Delete Author Success",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Deletion cancelled", "Delete Author Cancelled",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    //display author table on form
+                    adap = new SqlDataAdapter();
+                    ds = new DataSet();
+
+                    //sql command to display all in table
+                    string sql = "SELECT * FROM tblAuthors";
+                    comm = new SqlCommand(sql, conn);
+                    adap.SelectCommand = comm;
+                    adap.Fill(ds, "AuthorTable");
+
+                    dgDeleteAuthor.DataSource = ds;
+                    dgDeleteAuthor.DataMember = "AuthorTable";
+
+                    conn.Close(); //close database connection         
+
+                }
+                catch (SqlException error)
+                {
+                    MessageBox.Show(error.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error: Please select author to delete from list",
+                        "Input error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }            
         }
     }
 }

@@ -43,6 +43,7 @@ namespace MaintainAuthors
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lblUpdate = new System.Windows.Forms.Label();
             this.dgUpdateAuthor = new System.Windows.Forms.DataGridView();
             this.cbUpdateAuthor = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -59,13 +60,12 @@ namespace MaintainAuthors
             this.btnExitU = new System.Windows.Forms.Button();
             this.btnClearU = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.lblDelete = new System.Windows.Forms.Label();
             this.dgDeleteAuthor = new System.Windows.Forms.DataGridView();
             this.cbDeleteAuthor = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnExitD = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.lblUpdate = new System.Windows.Forms.Label();
-            this.lblDelete = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAddAuthor)).BeginInit();
@@ -223,6 +223,17 @@ namespace MaintainAuthors
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // lblUpdate
+            // 
+            this.lblUpdate.AutoSize = true;
+            this.lblUpdate.ForeColor = System.Drawing.Color.Red;
+            this.lblUpdate.Location = new System.Drawing.Point(27, 7);
+            this.lblUpdate.Name = "lblUpdate";
+            this.lblUpdate.Size = new System.Drawing.Size(163, 13);
+            this.lblUpdate.TabIndex = 22;
+            this.lblUpdate.Text = "Click here to load the database...";
+            this.lblUpdate.Click += new System.EventHandler(this.lblUpdate_Click);
+            // 
             // dgUpdateAuthor
             // 
             this.dgUpdateAuthor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -378,6 +389,17 @@ namespace MaintainAuthors
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
+            // lblDelete
+            // 
+            this.lblDelete.AutoSize = true;
+            this.lblDelete.ForeColor = System.Drawing.Color.Red;
+            this.lblDelete.Location = new System.Drawing.Point(35, 10);
+            this.lblDelete.Name = "lblDelete";
+            this.lblDelete.Size = new System.Drawing.Size(163, 13);
+            this.lblDelete.TabIndex = 25;
+            this.lblDelete.Text = "Click here to load the database...";
+            this.lblDelete.Click += new System.EventHandler(this.lblDelete_Click);
+            // 
             // dgDeleteAuthor
             // 
             this.dgDeleteAuthor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -422,28 +444,7 @@ namespace MaintainAuthors
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // lblUpdate
-            // 
-            this.lblUpdate.AutoSize = true;
-            this.lblUpdate.ForeColor = System.Drawing.Color.Red;
-            this.lblUpdate.Location = new System.Drawing.Point(27, 7);
-            this.lblUpdate.Name = "lblUpdate";
-            this.lblUpdate.Size = new System.Drawing.Size(163, 13);
-            this.lblUpdate.TabIndex = 22;
-            this.lblUpdate.Text = "Click here to load the database...";
-            this.lblUpdate.Click += new System.EventHandler(this.lblUpdate_Click);
-            // 
-            // lblDelete
-            // 
-            this.lblDelete.AutoSize = true;
-            this.lblDelete.ForeColor = System.Drawing.Color.Red;
-            this.lblDelete.Location = new System.Drawing.Point(35, 10);
-            this.lblDelete.Name = "lblDelete";
-            this.lblDelete.Size = new System.Drawing.Size(163, 13);
-            this.lblDelete.TabIndex = 25;
-            this.lblDelete.Text = "Click here to load the database...";
-            this.lblDelete.Click += new System.EventHandler(this.lblDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // MaintainAuthorsFrm
             // 
