@@ -21,20 +21,28 @@ namespace OrderForBooks
         {
             try
             {
-                MaintainCustomersFrm newCustomerfrm = new maintainCustomersFrm();
-                adminform.Show();
+                MaintainCustomersFrm newCustomerfrm = new MaintainCustomersFrm();
+                newCustomerfrm.SetInitialTab(true); // Admin user
+                newCustomerfrm.Show();
             }
             catch (Exception ex)
-            { }
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             try
             {
+                MaintainBookssFrm booksfrm = new maintainBooksFrm();
+                booksfrm.Show();
+
             }
             catch (Exception ex)
-            { }
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -42,19 +50,27 @@ namespace OrderForBooks
         {
             try
             {
-                MaintainAuthorssFrm Authorsfrm = new maintainCustomersFrm();
+                MaintainAuthorsFrm Authorsfrm = new maintainCustomersFrm();
                 adminform.Show();
             }
             catch (Exception ex)
-            { }
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            try { }
+            try
+            {
+                ReportsFrm reportsfrm = new ReportsFrm();
+                reportsfrm.Show();
+            }
             catch (Exception ex)
-            { }
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -62,6 +78,13 @@ namespace OrderForBooks
         {
             //close the form
             this.Close();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Defaultfrm prevForm = new Defaultfrm(); 
+            prevForm.Show();
         }
     }
 }

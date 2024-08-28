@@ -114,7 +114,7 @@ namespace OrderForBooks
             this.ClientSize = new System.Drawing.Size(309, 205);
             this.Controls.Add(this.groupBox1);
             this.Name = "Loginfrm";
-            this.Text = "Loginfrm";
+            this.Text = "Login";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

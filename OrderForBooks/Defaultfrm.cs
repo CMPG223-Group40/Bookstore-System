@@ -17,29 +17,24 @@ namespace OrderForBooks
             InitializeComponent();
 
         }
-        public void SetInitialTab()
-        {
-            // Ensure the TabControl is not null and has at least one tab
-            if (tab!= null && tab.TabPages.Count > 0)
-            {
-                tab.SelectedTab = tab.TabPages[0];
-            }
-        }
+        
 
-            private void Defaultfrm_Load(object sender, EventArgs e)
+        private void Defaultfrm_Load(object sender, EventArgs e)
         {
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Welcome! Please fill in your details to register as a new customer ,if you already have a customer ID make use of existing customer button to continue ")
             CustomersForm customersForm = new CustomersForm();
-            customersForm.SetInitialTab();
+            customersForm.SetInitialTab(false); //new customer
             customersForm.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Welcome! please make sure you already have a customer ID to continue ,if not click the NEW button to register ")
             frmPlaceOrderForm ordersForm = new frmPlaceOrderForm();
             ordersForm.Show();
         }

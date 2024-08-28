@@ -50,6 +50,7 @@ namespace OrderForBooks
             this.btnFilter = new System.Windows.Forms.Button();
             this.dtgvBooksAvailable = new System.Windows.Forms.DataGridView();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.lblCustomerName = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.gbxShippingAddress.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBooksAvailable)).BeginInit();
@@ -79,9 +80,9 @@ namespace OrderForBooks
             this.lblShip.AutoSize = true;
             this.lblShip.Location = new System.Drawing.Point(9, 29);
             this.lblShip.Name = "lblShip";
-            this.lblShip.Size = new System.Drawing.Size(70, 13);
+            this.lblShip.Size = new System.Drawing.Size(92, 13);
             this.lblShip.TabIndex = 2;
-            this.lblShip.Text = "Ship order to:";
+            this.lblShip.Text = "Shipping Address:";
             // 
             // lblFilterValue
             // 
@@ -154,7 +155,7 @@ namespace OrderForBooks
             this.groupBox1.Size = new System.Drawing.Size(226, 100);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Price and Quantity";
             // 
             // lblQuantity
             // 
@@ -183,7 +184,7 @@ namespace OrderForBooks
             this.gbxShippingAddress.Size = new System.Drawing.Size(325, 176);
             this.gbxShippingAddress.TabIndex = 0;
             this.gbxShippingAddress.TabStop = false;
-            this.gbxShippingAddress.Text = "groupBox2";
+            this.gbxShippingAddress.Text = "Address";
             // 
             // lstAddress
             // 
@@ -251,11 +252,21 @@ namespace OrderForBooks
             this.linkLabel1.Text = "Back";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // lblCustomerName
+            // 
+            this.lblCustomerName.AutoSize = true;
+            this.lblCustomerName.Location = new System.Drawing.Point(304, 59);
+            this.lblCustomerName.Name = "lblCustomerName";
+            this.lblCustomerName.Size = new System.Drawing.Size(0, 13);
+            this.lblCustomerName.TabIndex = 13;
+            this.lblCustomerName.Visible = false;
+            // 
             // frmPlaceOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(853, 500);
+            this.Controls.Add(this.lblCustomerName);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.dtgvBooksAvailable);
             this.Controls.Add(this.btnVerify);
@@ -272,7 +283,7 @@ namespace OrderForBooks
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblCustomerID);
             this.Name = "frmPlaceOrderForm";
-            this.Text = "Form1";
+            this.Text = "Order Form";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -307,6 +318,7 @@ namespace OrderForBooks
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.DataGridView dtgvBooksAvailable;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label lblCustomerName;
     }
 }
 

@@ -17,7 +17,7 @@ namespace OrderForBooks
         {
             InitializeComponent();
         }
-        SqlConnection conString =new SqlConnection("");
+        SqlConnection conString =new SqlConnection("Data Source=MALONJE-S-ASUS-;Initial Catalog=BookStore;Integrated Security=True");
         private void btnLogin_Click(object sender, EventArgs e)
         {
             // Get the entered username and password

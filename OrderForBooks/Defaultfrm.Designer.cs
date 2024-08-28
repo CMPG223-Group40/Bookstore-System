@@ -131,7 +131,7 @@ namespace OrderForBooks
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Defaultfrm";
-            this.Text = "Defaultfrm";
+            this.Text = "Default";
             this.Load += new System.EventHandler(this.Defaultfrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

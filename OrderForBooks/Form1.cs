@@ -17,7 +17,7 @@ namespace OrderForBooks
         {
             InitializeComponent();
         }
-        SqlConnection conString = new SqlConnection("");
+        SqlConnection conString = new SqlConnection("Data Source=MALONJE-S-ASUS-;Initial Catalog=BookStore;Integrated Security=True");
         private void Form1_Load(object sender, EventArgs e)
         {
             btnPlaceOrder.Enabled = false; // Disable Place Order button initially
@@ -47,6 +47,13 @@ namespace OrderForBooks
                                 string address = reader["Address"].ToString();
                                 lstAddress.Text = address;
 
+                                // Retrieve the customer's name
+                                string firstName = reader["FirstName"].ToString();
+                                string lastName = reader["LastName"].ToString();
+                                string customerName = $"{firstName} {lastName}";
+
+                                // Store name for later use
+                                lblCustomerName.Text = customerName;
                                 LoadBooksToDataGridView();
                             }
                             else
@@ -154,7 +161,7 @@ namespace OrderForBooks
 
         private void btnPlaceOrder_Click(object sender, EventArgs e)
         {
-            string referenceId = "ORD" + DateTime.Now.ToString("yyyyMMddHHmmss");
+            string OrderID = "ORD" + DateTime.Now.ToString("yyyyMMddHHmmss");
 
             // current date for the order
             DateTime orderDate = DateTime.Now;
@@ -184,9 +191,10 @@ namespace OrderForBooks
                     conString.Close();
                 }
             }
+            string customerName = lblCustomerName.Text;
 
             //order summary
-            string summary = $"Order Number: {referenceId}\n" +
+            string summary = $"Order Number: {OrderID}\n" +
                              $"Customer ID: {customerId}\n" +
                              $"Order Date: {orderDate}\n" +
                              $"Books Ordered:\n";
@@ -206,6 +214,7 @@ namespace OrderForBooks
             // Display the summary in the lstSummary
             lstSummary.Items.Clear();
             lstSummary.Items.Add("THANK YOU FOR YOUR ORDER \n\n");
+            lstSummary.Items.Add("ORDER FOR {customerName} \n\n");
             lstSummary.Items.Add(summary);
 
             //clear the form for the next order
