@@ -122,7 +122,23 @@ namespace MaintainAuthors
             }
         }
 
+        /**This method updates an author to the system database**/
+        public static void updateAuthor(string sql)
+        {
+            try
+            {
+                adap = new SqlDataAdapter();
+                comm = new SqlCommand(sql, conn);
 
+                //add new record to database
+                adap.UpdateCommand = comm;
+                adap.UpdateCommand.ExecuteNonQuery();
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
 
 
         /**This method checks if there are digits in user input**/
@@ -215,7 +231,48 @@ namespace MaintainAuthors
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            int authorID;
+            string fName, lName, contact, sqlUpdate;
 
+            authorID = int.Parse(txtAuthorID.Text);
+            fName = txtFNameU.Text;
+            lName = txtLNameU.Text;
+            contact = txtContactU.Text;
+
+            try
+            {
+                //connect to database
+                conn.Open();
+
+                //sql update command to update new author record
+                sqlUpdate = $"UPDATE tblAuthors SET FName = '{fName}', LName = '{lName}', ContactNo = '{contact}'" +
+                    $"WHERE AuthorID = {authorID}";
+
+                //call update author method
+                updateAuthor(sqlUpdate);
+
+                //display author table on form
+                adap = new SqlDataAdapter();
+                ds = new DataSet();
+
+                //sql command to display all in table
+                string sql = "SELECT * FROM tblAuthors";
+                comm = new SqlCommand(sql, conn);
+                adap.SelectCommand = comm;
+                adap.Fill(ds, "AuthorTable");
+
+                dgUpdateAuthor.DataSource = ds;
+                dgUpdateAuthor.DataMember = "AuthorTable";
+
+                conn.Close(); //close database connection
+
+                MessageBox.Show("Author details updated successfully", "Update Author Success",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.Message);
+            }
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -250,8 +307,8 @@ namespace MaintainAuthors
 
                 //load author combobox
                 adap.Fill(ds, "tblAuthors");
-                cbUpdateAuthor.DisplayMember = "LName";
-                cbUpdateAuthor.ValueMember = "LName";
+                cbUpdateAuthor.DisplayMember = "AuthorID";
+                cbUpdateAuthor.ValueMember = "AuthorID";
                 cbUpdateAuthor.DataSource = ds.Tables["tblAuthors"];
 
                 conn.Close(); //close database connection
@@ -286,8 +343,8 @@ namespace MaintainAuthors
 
                 //load author combobox
                 adap.Fill(ds, "tblAuthors");
-                cbDeleteAuthor.DisplayMember = "LName";
-                cbDeleteAuthor.ValueMember = "LName";
+                cbDeleteAuthor.DisplayMember = "AuthorID";
+                cbDeleteAuthor.ValueMember = "AuthorID";
                 cbDeleteAuthor.DataSource = ds.Tables["tblAuthors"];
 
                 conn.Close(); //close database connection
@@ -306,12 +363,12 @@ namespace MaintainAuthors
             {
                 if (cbUpdateAuthor.SelectedItem != null)
                 {
-                    string selectedLName = cbUpdateAuthor.SelectedValue.ToString();
+                    int selectedLName = (int)cbUpdateAuthor.SelectedValue;
 
                     // Find the row in DataGridView based on ComboBox selection
                     foreach (DataGridViewRow row in dgUpdateAuthor.Rows)
                     {
-                        if (row.Cells["LName"].Value.ToString() == selectedLName)
+                        if ((int)row.Cells["AuthorID"].Value == selectedLName)
                         {
                             // Select the row in DataGridView
                             row.Selected = true;
@@ -345,12 +402,12 @@ namespace MaintainAuthors
             {
                 if (cbDeleteAuthor.SelectedItem != null)
                 {
-                    string selectedLName = cbDeleteAuthor.SelectedValue.ToString();
+                    int selectedLName = (int)cbDeleteAuthor.SelectedValue;
 
                     // Find the row in DataGridView based on ComboBox selection
                     foreach (DataGridViewRow row in dgDeleteAuthor.Rows)
                     {
-                        if (row.Cells["LName"].Value.ToString() == selectedLName)
+                        if ((int)row.Cells["AuthorID"].Value == selectedLName)
                         {
                             // Select the row in DataGridView
                             row.Selected = true;
