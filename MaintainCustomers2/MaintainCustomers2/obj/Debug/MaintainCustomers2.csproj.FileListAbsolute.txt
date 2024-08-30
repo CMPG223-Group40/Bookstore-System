@@ -1,0 +1,10 @@
+\\143.160.81.13\CTX_Redirected_Data$\45304815\Deskop\MaintainCustomers2\MaintainCustomers2\bin\Debug\MaintainCustomers2.exe.config
+\\143.160.81.13\CTX_Redirected_Data$\45304815\Deskop\MaintainCustomers2\MaintainCustomers2\bin\Debug\MaintainCustomers2.exe
+\\143.160.81.13\CTX_Redirected_Data$\45304815\Deskop\MaintainCustomers2\MaintainCustomers2\bin\Debug\MaintainCustomers2.pdb
+\\143.160.81.13\CTX_Redirected_Data$\45304815\Deskop\MaintainCustomers2\MaintainCustomers2\obj\Debug\MaintainCustomers2.csproj.AssemblyReference.cache
+\\143.160.81.13\CTX_Redirected_Data$\45304815\Deskop\MaintainCustomers2\MaintainCustomers2\obj\Debug\MaintainCustomers2.Form1.resources
+\\143.160.81.13\CTX_Redirected_Data$\45304815\Deskop\MaintainCustomers2\MaintainCustomers2\obj\Debug\MaintainCustomers2.Properties.Resources.resources
+\\143.160.81.13\CTX_Redirected_Data$\45304815\Deskop\MaintainCustomers2\MaintainCustomers2\obj\Debug\MaintainCustomers2.csproj.GenerateResource.cache
+\\143.160.81.13\CTX_Redirected_Data$\45304815\Deskop\MaintainCustomers2\MaintainCustomers2\obj\Debug\MaintainCustomers2.csproj.CoreCompileInputs.cache
+\\143.160.81.13\CTX_Redirected_Data$\45304815\Deskop\MaintainCustomers2\MaintainCustomers2\obj\Debug\MaintainCustomers2.exe
+\\143.160.81.13\CTX_Redirected_Data$\45304815\Deskop\MaintainCustomers2\MaintainCustomers2\obj\Debug\MaintainCustomers2.pdb
